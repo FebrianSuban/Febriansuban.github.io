@@ -561,6 +561,36 @@
       </div>
 
     </div>
+    <body>
+    <h2>Unggah Foto sebagai Kenangan</h2>
+    <input type="file" id="photo" accept="image/*">
+    <button onclick="previewPhoto()">Unggah</button>
+    <div id="photoPreview"></div>
+
+    <script>
+        function previewPhoto() {
+            const fileInput = document.getElementById('photo');
+            const file = fileInput.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    const imageUrl = event.target.result;
+                    const photoPreview = document.getElementById('photoPreview');
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imageUrl;
+                    photoPreview.innerHTML = '';
+                    photoPreview.appendChild(imgElement);
+                }
+                
+                reader.readAsDataURL(file);
+            } else {
+                alert('Pilih foto terlebih dahulu.');
+            }
+        }
+    </script>
+</body>
   </section><!-- End Portfolio Section -->
 
   <!-- ======= Contact Section ======= -->
