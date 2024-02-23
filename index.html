@@ -589,66 +589,28 @@
           </div>
         </div>
 
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
-            <p>febriansuban@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Telepon</h3>
-            <p>+62 813-6293-5208</p>
-          </div>
-        </div>
-      </div>
-
-       <form id="contact-form" class="mt-4">
+       <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
         <div class="row">
-            <div class="col-md-6 form-group">
-                <input type="text" name="name" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" name="email" id="email" placeholder="Your Email" required>
-            </div>
+          <div class="col-md-6 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+          </div>
         </div>
         <div class="form-group mt-3">
-            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
         </div>
         <div class="form-group mt-3">
-            <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
         </div>
         <div class="my-3">
-            <div id="loading" style="display: none;">Memuat...</div>
-            <div id="error-message" style="display: none;"></div>
-            <div id="success-message" style="display: none;">Pesan Anda telah terkirim. Terima Kasih!!</div>
+          <div class="loading">Memuat</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Pesan Anda telah terkirim.Terima Kasih!!</div>
         </div>
-        <div class="text-center"><button type="button" onclick="submitForm()">Kirim Pesan</button></div>
-    </form>
-
-    <script>
-        function submitForm() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var subject = document.getElementById('subject').value;
-            var message = document.getElementById('message').value;
-
-            // Simulasi pengiriman data (tanpa database atau PHP)
-            if (name && email && subject && message) {
-                document.getElementById('loading').style.display = 'block';
-                setTimeout(function() {
-                    document.getElementById('loading').style.display = 'none';
-                    document.getElementById('success-message').style.display = 'block';
-                }, 2000); // Delay 2 detik untuk simulasi pengiriman
-            } else {
-                document.getElementById('error-message').innerText = 'Mohon lengkapi semua kolom!';
-                document.getElementById('error-message').style.display = 'block';
-            }
-        }
-    </script>
-
+        <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+      </form>
     </div>
   </section><!-- End Contact Section -->
 
