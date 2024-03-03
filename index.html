@@ -877,10 +877,6 @@
   async function sendMessage() {
   const userInput = document.getElementById('user-input').value;
   const chatBox = document.getElementById('chat-box');
-  const sendButton = document.querySelector('.chat-input button');
-
-  // Disable the send button while waiting for response
-  sendButton.disabled = true;
 
   // Append user message to chat box
   const userMessageElement = document.createElement('div');
@@ -890,7 +886,7 @@
 
   try {
     // Send user message to ChatGPT API
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -907,11 +903,9 @@
     chatBox.appendChild(botMessageElement);
   } catch (error) {
     console.error('Error:', error);
-  } finally {
-    // Enable the send button after response is received
-    sendButton.disabled = false;
   }
 }
+
 
 </script>
 
