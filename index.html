@@ -860,21 +860,17 @@
       <div class="col-md-12 d-flex align-items-stretch">
         <div class="chat-container">
           <div class="chat-box">
-            <div class="chat-message received">
-              <p>Silahkan Tuliskan Pertanyaan Anda Dibawah ini</p>
-            </div>
-            <!-- More chat messages go here -->
+             <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Memuat</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Pesan Anda telah terkirim.Terima Kasih!!</div>
+              </div>
+              <div class="text-center"><button type="submit">Bartanya</button></div>
+            </form>
           </div>
-          <div class="chat-input">
-            <input type="text" placeholder="Ketik pesan...">
-            <button type="submit">Kirim</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 </section><!-- End Chatbot Section -->
 
 
