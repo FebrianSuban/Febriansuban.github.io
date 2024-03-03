@@ -849,22 +849,61 @@
   </section><!-- End Contact Section -->
 
   <!-- ======= Chatbot Section ======= -->
-  <section id="chatbot" class="chatbot">
-    <div class="container">
+<section id="chatbot" class="chatbot">
+  <div class="container">
 
-      <div class="section-title">
-        <h2>Chatfbi</h2>
-      </div>
-       <div class="row">
-         <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-              </div>
-              <div class="text-center"><button type="submit">Bartanya</button></div>
-            </form>
+    <div class="section-title">
+      <h2>Chatfbi</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="chat-container">
+          <div class="chat-box" id="chat-box">
+            <div class="chat-message received">
+              <p>Halo! Ada yang bisa saya bantu?</p>
+            </div>
           </div>
+          <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Ketik pesan...">
+            <button onclick="sendMessage()">Kirim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section><!-- End Chatbot Section -->
+
+<script>
+  async function sendMessage() {
+    const userInput = document.getElementById('user-input').value;
+    const chatBox = document.getElementById('chat-box');
+
+    // Append user message to chat box
+    const userMessageElement = document.createElement('div');
+    userMessageElement.classList.add('chat-message', 'sent');
+    userMessageElement.innerHTML = `<p>${userInput}</p>`;
+    chatBox.appendChild(userMessageElement);
+
+    // Send user message to ChatGPT API
+    const response = await fetch('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', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: userInput })
+    });
+
+    const responseData = await response.json();
+
+    // Append ChatGPT response to chat box
+    const botMessageElement = document.createElement('div');
+    botMessageElement.classList.add('chat-message', 'received');
+    botMessageElement.innerHTML = `<p>${responseData.message}</p>`;
+    chatBox.appendChild(botMessageElement);
+  }
+</script>
+
+  
 
 
   <!-- Vendor JS Files -->
