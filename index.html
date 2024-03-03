@@ -849,9 +849,9 @@
   </section><!-- End Contact Section -->
 
   <!-- ======= Chatbot Section ======= -->
+<!-- ======= Chatbot Section ======= -->
 <section id="chatbot" class="chatbot">
   <div class="container">
-
     <div class="section-title">
       <h2>Chatfbi</h2>
     </div>
@@ -875,39 +875,39 @@
 
 <script>
   async function sendMessage() {
-  const userInput = document.getElementById('user-input').value;
-  const chatBox = document.getElementById('chat-box');
+    const userInput = document.getElementById('user-input').value;
+    const chatBox = document.getElementById('chat-box');
 
-  // Append user message to chat box
-  const userMessageElement = document.createElement('div');
-  userMessageElement.classList.add('chat-message', 'sent');
-  userMessageElement.innerHTML = `<p>${userInput}</p>`;
-  chatBox.appendChild(userMessageElement);
+    // Append user message to chat box
+    const userMessageElement = document.createElement('div');
+    userMessageElement.classList.add('chat-message', 'sent');
+    userMessageElement.innerHTML = `<p>${userInput}</p>`;
+    chatBox.appendChild(userMessageElement);
 
-  try {
-    // Send user message to ChatGPT API
-    const response = await fetch('https://api.openai.com/v1/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: userInput })
-    });
+    try {
+      // Send user message to ChatGPT API
+      const response = await fetch('https://api.openai.com/v1/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': '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' // Ganti YOUR_API_KEY dengan kunci API Anda
+        },
+        body: JSON.stringify({ model: 'text-davinci-003', prompt: userInput, max_tokens: 150 })
+      });
 
-    const responseData = await response.json();
+      const responseData = await response.json();
 
-    // Append ChatGPT response to chat box
-    const botMessageElement = document.createElement('div');
-    botMessageElement.classList.add('chat-message', 'received');
-    botMessageElement.innerHTML = `<p>${responseData.message}</p>`;
-    chatBox.appendChild(botMessageElement);
-  } catch (error) {
-    console.error('Error:', error);
+      // Append ChatGPT response to chat box
+      const botMessageElement = document.createElement('div');
+      botMessageElement.classList.add('chat-message', 'received');
+      botMessageElement.innerHTML = `<p>${responseData.choices[0].text.trim()}</p>`;
+      chatBox.appendChild(botMessageElement);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
-}
-
-
 </script>
+
 
   
 
