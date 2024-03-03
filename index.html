@@ -885,7 +885,7 @@
     chatBox.appendChild(userMessageElement);
 
     // Send user message to ChatGPT API
-    const response = await fetch('Authorization: Bearer OPENAI_API_KEY', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
