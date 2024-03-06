@@ -55,7 +55,6 @@
           <li><a class="nav-link" href="#services">Galeri</a></li>
           <li><a class="nav-link" href="#portfolio">portofolio</a></li>
           <li><a class="nav-link" href="#contact">Kontak</a></li>
-          <li><a class="nav-link" href="#chatbot">Chatfbi</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -847,70 +846,6 @@
       </form>
     </div>
   </section><!-- End Contact Section -->
-
-  <!-- ======= Chatbot Section ======= -->
-<!-- ======= Chatbot Section ======= -->
-<section id="chatbot" class="chatbot">
-  <div class="container">
-    <div class="section-title">
-      <h2>Chatfbi</h2>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="chat-container">
-          <div class="chat-box" id="chat-box">
-            <div class="chat-message received">
-              <p>Halo! Ada yang bisa saya bantu?</p>
-            </div>
-          </div>
-          <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Ketik pesan...">
-            <button onclick="sendMessage()">Kirim</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section><!-- End Chatbot Section -->
-
-<script>
-  async function sendMessage() {
-    const userInput = document.getElementById('user-input').value;
-    const chatBox = document.getElementById('chat-box');
-
-    // Append user message to chat box
-    const userMessageElement = document.createElement('div');
-    userMessageElement.classList.add('chat-message', 'sent');
-    userMessageElement.innerHTML = `<p>${userInput}</p>`;
-    chatBox.appendChild(userMessageElement);
-
-    try {
-      // Send user message to ChatGPT API
-      const response = await fetch('https://api.openai.com/v1/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': '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' // Ganti YOUR_API_KEY dengan kunci API Anda
-        },
-        body: JSON.stringify({ model: 'text-davinci-003', prompt: userInput, max_tokens: 150 })
-      });
-
-      const responseData = await response.json();
-
-      // Append ChatGPT response to chat box
-      const botMessageElement = document.createElement('div');
-      botMessageElement.classList.add('chat-message', 'received');
-      botMessageElement.innerHTML = `<p>${responseData.choices[0].text.trim()}</p>`;
-      chatBox.appendChild(botMessageElement);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }
-</script>
-
-
-  
-
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
