@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Febrian Suban - Pendidikan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease-in-out;
+        }
+        body:hover {
+            background-color: #e9ecef;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: text-shadow 0.3s ease-in-out;
+        }
+        .header:hover {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .header img:hover {
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .profile-card {
+            background: url('img/Blue Modern Web Designer Twitter Header.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 70px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out, background-size 0.3s ease-in-out;
+        }
+        .profile-card:hover {
+            transform: scale(1.05);
+            background-size: 110%;
+        }
+        .profile-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-bottom: 10px;
+            transition: border 0.3s ease-in-out;
+        }
+        .profile-card img:hover {
+            border: 2px solid #f8f9fa;
+        }
+        .social-media {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-media:hover {
+            transform: scale(1.1);
+        }
+        .social-media i {
+            font-size: 24px;
+            color: #333;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-media i:hover {
+            transform: rotate(360deg);
+        }
+        .education-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .education-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .education-item:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px; /* Match the max-width of the body */
+            margin: 0 auto; /* Center the footer */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .footer:hover {
+            transform: translateY(-10px);
+        }
+
+        .footer i {
+            font-size: 20px; /* Slightly reduce icon size for mobile */
+            color: #555; /* Adjust color to match the image */
+        }
+
+        /* Add padding to the bottom of the body to prevent content from being hidden behind the footer */
+        body {
+            padding-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="img/f5.jpg" alt="Profile">
+        <div>
+            <h1 class="fs-4 mb-0"><b>Febrian Suban</b></h1>
+            <p class="text-muted mb-0"><b>Selamat Datang</b></p>
+        </div>
+    </div>
+    
+    <div class="profile-card">
+    </div>
+
+    <div class="social-media">
+        <i class="bi bi-facebook fs-4"></i>
+        <i class="bi bi-instagram fs-4"></i>
+        <i class="bi bi-github fs-4"></i>
+        <i class="bi bi-linkedin fs-4"></i>
+        <i class="bi bi-whatsapp fs-4"></i>
+    </div>
+
+    <h3 class="fs-5 mb-3">Pendidikan</h3>
+    <ul class="education-list">
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>SMA Negeri 1 Adonara Timur</b></h4>
+            <p class="text-muted mb-0">Ilmu Pengetahuan Alam,IPA, 2015 - 2016</p>
+        </li>
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>SMA Swasta Ile Boleng</b></h4>
+            <p class="text-muted mb-0">Ilmu Pengetahuan Alam,IPA, 2016</p>
+        </li>
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>SMK Swasta Surya Mandala</b></h4>
+            <p class="text-muted mb-0">Kelautan, 2016</p>
+        </li>
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>SMK PGRI 7 Singhasari,Kota Malang </b></h4>
+            <p class="text-muted mb-0">Teknik Komputer Dan Jaringan TKJ, 2016 - 2017</p>
+        </li>
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>SMA Dharma Yadi,Kota Makassar </b></h4>
+            <p class="text-muted mb-0">Ilmu Pengetahuan Alam,IPA, 2017 - 2018</p>
+        </li>
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>Politeknik Piksi Ganesha,Kota Bandung </b></h4>
+            <p class="text-muted mb-0">Jurusan Sistem Informasi, 2018 - 2019</p>
+        </li>
+        <li class="education-item">
+            <h4 class="fs-6 mb-1"><b>Institut Digital Ekonomi LPKIA,Kota Bandung </b></h4>
+            <p class="text-muted mb-0">Jurusan Teknik Informatika, 2022 - 2026</p>
+        </li>
+    </ul>
+
+    <div class="footer">
+        <a href="index.html"><i class="bi bi-house-fill fs-4"></i></a>
+        <a href="pendidikan.html"><i class="bi bi-mortarboard-fill fs-4"></i></a>
+        <a href="sertifikat.html"><i class="bi bi-award-fill fs-4"></i></a>
+        <a href="tentang.html"><i class="bi bi-person-fill fs-4"></i></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
